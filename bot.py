@@ -19,5 +19,8 @@ class MyClient(discord.Client):
         if message.content.lower() == "!ping":
             await message.channel.send("Pong!")
 
+        if message.content.startswith('$hello'):
+            await message.channel.send('Hello!')
+            
 client = MyClient(intents=intents)
 client.run(TOKEN)
